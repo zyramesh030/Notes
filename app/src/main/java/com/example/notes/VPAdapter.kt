@@ -1,30 +1,22 @@
 package com.example.notes
 
 import android.content.Context
-import android.graphics.drawable.Drawable
-import android.media.Image
-import android.text.SpannableString
-import android.text.Spanned
-import android.text.style.ImageSpan
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
+import androidx.fragment.app.FragmentActivity
+import androidx.viewpager2.adapter.FragmentStateAdapter
 
-open class VPAdapter(fm: FragmentManager, behaviorResumeOnlyCurrentFragment: Int) : FragmentPagerAdapter(fm) {
+open class VPAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
 
-    var fragList: ArrayList<Fragment> = ArrayList()
-    var imageList: ArrayList<Int> = ArrayList()
 
-    override fun getCount(): Int {
-        return fragList.size
+    override fun getItemCount(): Int {
+        return 2
     }
 
-    override fun getItem(position: Int): Fragment {
-        return fragList.get(position)
-    }
-
-    open fun addFragment(frag: Fragment){
-        fragList.add(frag)
+    override fun createFragment(position: Int): Fragment {
+       when(position) {
+           0 -> return fragment_notes_all()
+           1 -> return fragment_tasks()
+       }
+        return TODO("Provide the return value")
     }
 }
