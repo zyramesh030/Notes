@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import androidx.viewpager2.adapter.FragmentViewHolder
 
 open class VPAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
 
@@ -17,6 +18,6 @@ open class VPAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(
            0 -> return fragment_notes_all()
            1 -> return fragment_tasks()
        }
-        return TODO("Provide the return value")
+        return fragment_notes_all()
     }
 }
