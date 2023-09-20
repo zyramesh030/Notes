@@ -2,6 +2,8 @@ package com.example.notes
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.Tab
@@ -15,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         val viewPager: ViewPager2 = findViewById(R.id.view_pager2)
         val tabLayout: TabLayout = findViewById(R.id.tabLayout)
 
+
         var adapter = VPAdapter(this)
         viewPager.adapter = adapter
         val tabLayoutMediator = TabLayoutMediator(tabLayout, viewPager
@@ -26,6 +29,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
         tabLayoutMediator.attach()
+
+
 
     }
 }

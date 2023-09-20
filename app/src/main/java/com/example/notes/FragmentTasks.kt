@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-class fragment_tasks : Fragment() {
+class FragmentTasks : Fragment() {
 
 
     override fun onCreateView(

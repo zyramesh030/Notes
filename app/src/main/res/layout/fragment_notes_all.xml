@@ -4,35 +4,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragment_notes_all">
+    tools:context=".FragmentNotesAll">
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout2"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_folders"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:scrollbars="horizontal"
+        app:layout_constraintHorizontal_weight="0.8"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tabIndicator="@color/no_color"
-        app:tabTextColor="@color/black"
-        app:tabIconTint="@color/drawable_color"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintVertical_bias="0.0">
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/grey"
-            android:text="All"
-            tools:layout_editor_absoluteX="3dp"
-            tools:layout_editor_absoluteY="14dp" />
+    </androidx.recyclerview.widget.RecyclerView>
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:icon="@drawable/drawable_folder"
-            tools:layout_editor_absoluteX="134dp"
-            tools:layout_editor_absoluteY="10dp" />
-
-    </com.google.android.material.tabs.TabLayout>
+    <ImageView
+        android:id="@+id/folder_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/drawable_folder"
+        app:layout_constraintHorizontal_weight="0.15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintStart_toEndOf="@+id/rv_folders"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
