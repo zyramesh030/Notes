@@ -27,19 +27,16 @@ class FragmentNotesAll : Fragment() {
         )
 
         val  textList : ArrayList<FolderNameModel> = ArrayList()
-        val str1 = FolderNameModel("zhdgfkj")
-        val str2 = FolderNameModel("fhaif")
-        val str3 = FolderNameModel("afkjad")
-        val str4 = FolderNameModel("ajjhf")
-        val str5 = FolderNameModel("aid")
-        val str6 = FolderNameModel("IDIs")
+        val str = "Folder"
 
-        textList.add(str1)
-        textList.add(str2)
-        textList.add(str3)
-        textList.add(str4)
-        textList.add(str5)
-        textList.add(str6)
+
+        for(i in 1..10) {
+            val fname = FolderNameModel(str+i.toString())
+            textList.add(fname)
+        }
+
+        val uncat = FolderNameModel("Uncategorized")
+        textList.add(uncat)
 
         val folderRVAdapter = FolderRVAdapter(textList)
         rv.adapter = folderRVAdapter
