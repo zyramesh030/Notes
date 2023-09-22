@@ -19,15 +19,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="All"
+            android:clickable="true"
             android:gravity="center"
             android:layout_marginRight="5dp"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:textSize="12dp"
+            android:textSize="12sp"
             android:background="@drawable/rounded_corner"
             android:backgroundTint="@color/grey"
             android:padding="9dp"
-            android:src="@drawable/drawable_folder" />
+            android:src="@drawable/drawable_folder"
+            android:focusable="true" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
@@ -56,5 +58,11 @@
             android:layout_marginLeft="5dp"
             android:src="@drawable/drawable_folder" />
     </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/all_notes_container"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

@@ -1,10 +1,15 @@
 package com.example.notes
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -20,6 +25,28 @@ class FragmentNotesAll : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val frag: Fragment = AllNotesContainerFragment()
+
+        val frTrans : FragmentTransaction = parentFragmentManager.beginTransaction()
+
+        frTrans.replace(
+            R.id.all_notes_container, frag).commit()
+
+        val folderImg: ImageView = view.findViewById(R.id.folder_icon)
+        folderImg.setOnClickListener(View.OnClickListener {
+            val intent: Intent = Intent(context,AddFolders::class.java)
+            startActivity(intent)
+        })
+
+        val tv: TextView = view.findViewById(R.id.text_all)
+        tv.setOnClickListener(View.OnClickListener {
+            val frag: Fragment = AllNotesContainerFragment()
+
+            val frTrans : FragmentTransaction = parentFragmentManager.beginTransaction()
+
+            frTrans.replace(
+                R.id.all_notes_container, frag).commit()
+        })
 
         val rv : RecyclerView = view.findViewById(R.id.rv_folders)
         rv.layoutManager = LinearLayoutManager(context,
