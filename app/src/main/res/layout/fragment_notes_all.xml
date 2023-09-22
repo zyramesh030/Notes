@@ -3,53 +3,58 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
     android:gravity="left"
     tools:context=".FragmentNotesAll">
 
-    <TextView
-        android:id="@+id/text_all"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="All"
-        android:gravity="center"
-        android:layout_marginRight="5dp"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:textSize="12dp"
-        android:background="@drawable/rounded_corner"
-        android:backgroundTint="@color/grey"
-        android:padding="9dp"
-        android:src="@drawable/drawable_folder" />
+        android:orientation="horizontal"
+        android:gravity="left">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.7"
-        app:cardCornerRadius="10dp">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_folders"
+        <TextView
+            android:id="@+id/text_all"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:text="All"
+            android:gravity="center"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="12dp"
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="@color/grey"
+            android:padding="9dp"
+            android:src="@drawable/drawable_folder" />
 
-        </androidx.recyclerview.widget.RecyclerView>
-    </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            android:layout_weight="0.7"
+            app:cardCornerRadius="10dp">
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_folders"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
+            </androidx.recyclerview.widget.RecyclerView>
+        </androidx.cardview.widget.CardView>
 
-
-    <ImageView
-        android:id="@+id/folder_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rounded_corner"
-        android:backgroundTint="@color/grey"
-        android:padding="5dp"
-        android:layout_marginLeft="5dp"
-        android:src="@drawable/drawable_folder" />
-
+        <ImageView
+            android:id="@+id/folder_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="@color/grey"
+            android:padding="5dp"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/drawable_folder" />
+    </LinearLayout>
 
 </LinearLayout>
