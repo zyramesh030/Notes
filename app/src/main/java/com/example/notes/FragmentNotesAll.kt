@@ -9,9 +9,11 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlin.math.max
 
 class FragmentNotesAll : Fragment() {
 
@@ -33,10 +35,17 @@ class FragmentNotesAll : Fragment() {
             R.id.all_notes_container, frag).commit()
 
         val folderImg: ImageView = view.findViewById(R.id.folder_icon)
-        folderImg.setOnClickListener(View.OnClickListener {
-            val intent: Intent = Intent(context,AddFolders::class.java)
+        folderImg.setOnClickListener {
+            val intent = Intent(context, AddFolders::class.java)
             startActivity(intent)
-        })
+        }
+
+        val cardView: CardView = view.findViewById(R.id.folder_rv_cardview)
+        val maxWidth = resources.getDimensionPixelSize(R.dimen.max_folder_rv_cardview_width)
+        val layoutParams = cardView.layoutParams
+        layoutParams.width = maxWidth
+        cardView.layoutParams = layoutParams
+
 
         val tv: TextView = view.findViewById(R.id.text_all)
         tv.setOnClickListener(View.OnClickListener {
@@ -57,7 +66,7 @@ class FragmentNotesAll : Fragment() {
         val str = "Folder"
 
 
-        for(i in 1..10) {
+        for(i in 1..1) {
             val fname = FolderNameModel(str+i.toString())
             textList.add(fname)
         }
